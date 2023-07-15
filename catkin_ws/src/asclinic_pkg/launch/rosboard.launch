@@ -1,0 +1,21 @@
+<launch>
+	<node
+		pkg    = "asclinic_pkg"
+		name   = "streamer"
+		output = "screen"
+		type   = "stream.py"
+	/>
+
+	<!-- START A GROUP WITH A NAMESPACE -->
+	<group ns="asc">
+		<!-- LAUNCH A "rosboard" NODE -->
+		<node
+			pkg    = "rosboard"
+			name   = "rosboard"
+			output = "screen"
+			type   = "rosboard_node"
+		/>
+		
+	</group>
+
+</launch>

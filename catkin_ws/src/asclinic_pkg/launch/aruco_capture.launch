@@ -1,0 +1,32 @@
+<launch>
+
+	<!-- START A GROUP WITH A NAMESPACE -->
+	<group ns="asc">
+
+		<!-- LAUNCH A "Aruco Capture" NODE -->
+		<node
+			pkg    = "asclinic_pkg"
+			name   = "aruco_capture"
+			output = "screen"
+			type   = "aruco_capture.py"
+		/>
+
+		<!-- LAUNCH A "Aruco marker publisher" NODE -->
+		<node
+			pkg    = "asclinic_pkg"
+			name   = "aruco_publisher"
+			output = "screen"
+			type   = "aruco_publisher.py"
+		/>
+
+		<!-- LAUNCH A "Camera Pose" NODE -->
+		<node
+			pkg    = "asclinic_pkg"
+			name   = "camera_pose_estimator"
+			output = "screen"
+			type   = "camera_pose_estimator.py"
+		/>
+
+	</group>
+
+</launch>

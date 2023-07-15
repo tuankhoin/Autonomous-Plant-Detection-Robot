@@ -1,0 +1,61 @@
+<launch>
+	<node
+		pkg    = "asclinic_pkg"
+		name   = "streamer"
+		output = "screen"
+		type   = "stream.py"
+	/>
+	<!-- START A GROUP WITH A NAMESPACE -->
+	<group ns="asc">
+
+		<!-- LAUNCH A "Camera Capture" NODE -->
+		<node
+			pkg    = "asclinic_pkg"
+			name   = "webcam_node"
+			output = "screen"
+			type   = "webcam_node.py"
+		/>
+        <!-- Stream services -->
+		<node
+			pkg    = "rosboard"
+			name   = "rosboard"
+			output = "screen"
+			type   = "rosboard_node"
+		/>
+
+		<!-- object detection and plant navigation -->
+        <node
+			pkg    = "asclinic_pkg"
+			name   = "object_detection"
+			output = "screen"
+			type   = "object_detection.py"
+		/>
+		<node
+			pkg    = "asclinic_pkg"
+			name   = "move_around_plant"
+			output = "screen"
+			type   = "move_around_plant.py"
+		/>
+        <!-- LAUNCH Aruco NODES -->
+		<node
+			pkg    = "asclinic_pkg"
+			name   = "aruco_capture"
+			output = "screen"
+			type   = "aruco_capture.py"
+		/>
+		<node
+			pkg    = "asclinic_pkg"
+			name   = "aruco_publisher"
+			output = "screen"
+			type   = "aruco_publisher.py"
+		/>
+		<node
+			pkg    = "asclinic_pkg"
+			name   = "camera_pose_estimator"
+			output = "screen"
+			type   = "camera_pose_estimator.py"
+		/>
+
+	</group>
+
+</launch>

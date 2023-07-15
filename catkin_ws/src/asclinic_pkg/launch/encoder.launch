@@ -1,0 +1,62 @@
+<launch>
+
+	<!-- NOTE -->
+	<!-- Two nodes canNOT access the same GPIO line -->
+	<!-- The first node to open a line blocks other processes from accessing it -->
+
+	<!-- START A GROUP WITH A NAMESPACE -->
+	<group ns="asc">
+
+		<!-- LAUNCH A "Encoder Read Multi Threaded" NODE -->
+		<node
+			pkg    = "asclinic_pkg"
+			name   = "encoder_read_multi_threaded"
+			output = "screen"
+			type   = "encoder_read_multi_threaded"
+			>
+			<param
+				name   = "gpiochip_number"
+				value  = "1"
+			/>
+			<param
+				name   = "line_number_for_motor_left_channel_a"
+				value  = "105"
+			/>
+			<param
+				name   = "line_number_for_motor_left_channel_b"
+				value  = "106"
+			/>
+			<param
+				name   = "line_number_for_motor_right_channel_a"
+				value  = "84"
+			/>
+			<param
+				name   = "line_number_for_motor_right_channel_b"
+				value  = "130"
+			/>
+			<param
+				name   = "delta_t_for_publishing_counts"
+				value  = "0.1"
+			/>
+			<!-- NOTE: The following parameters are purely for the convenience of testing. -->
+			<param
+				name   = "time_in_seconds_to_drive_motors"
+				value  = "5.0"
+			/>
+			<param
+				name   = "drive_motor_target_speed"
+				value  = "0"
+			/>
+		</node>
+
+		<!-- LAUNCH A "I2C for Motors and Servos" NODE -->
+		<node
+			pkg    = "asclinic_pkg"
+			name   = "i2c_for_motors"
+			output = "screen"
+			type   = "i2c_for_motors"
+		/>
+
+	</group>
+
+</launch>

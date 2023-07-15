@@ -1,0 +1,11 @@
+float32 offset_x
+float32 offset_y
+float32 size_x
+float32 size_y
+string type
+float32 left
+float32 top
+float32 right
+float32 bottom
+float32 confidence
+uint8 zone

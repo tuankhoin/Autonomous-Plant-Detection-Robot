@@ -1,2 +1,3 @@
-# Autonomous Plant Detection Robot
- ROS code for a robot that traverse a course and look for plants in the area
+# asclinic-system
+
+Software for running the robot that is the focus of the Autonomous Systems Clinic subject.

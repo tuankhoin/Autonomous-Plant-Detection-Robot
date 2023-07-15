@@ -1,0 +1,24 @@
+<launch>
+
+	<!-- START A GROUP WITH A NAMESPACE -->
+	<group ns="asc">
+
+		<!-- LAUNCH A "object detect" NODE -->
+		<node
+			pkg    = "asclinic_pkg"
+			name   = "object_detection"
+			output = "screen"
+			type   = "object_detection.py"
+		/>
+
+		<!-- LAUNCH A "Aruco marker publisher" NODE -->
+		<node
+			pkg    = "asclinic_pkg"
+			name   = "move_around_plant"
+			output = "screen"
+			type   = "move_around_plant.py"
+		/>
+
+	</group>
+
+</launch>

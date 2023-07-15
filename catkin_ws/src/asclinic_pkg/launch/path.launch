@@ -1,0 +1,26 @@
+<launch>
+	<node
+		pkg    = "rrt_planner"
+		name   = "plantpublish"
+		output = "screen"
+		type   = "plant_publisher.py"
+	/>
+    <node
+		pkg    = "rrt_planner"
+		name   = "pathrequest"
+		output = "screen"
+		type   = "pathrequest_node_auto.py"
+	/>
+    <node
+		pkg    = "asclinic_pkg"
+		name   = "bezier"
+		output = "screen"
+		type   = "dummy_bezier.py"
+	/>
+    <node
+		pkg    = "asclinic_pkg"
+		name   = "nextwaypoint"
+		output = "screen"
+		type   = "dummy_nextwaypoint.py"
+	/>
+</launch>

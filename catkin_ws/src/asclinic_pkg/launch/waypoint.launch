@@ -1,0 +1,37 @@
+<launch>
+
+	<!-- START A GROUP WITH A NAMESPACE -->
+	<group ns="asc">
+
+		<!-- LAUNCH A "Fused pose kalman" NODE -->
+		<node
+			pkg    = "asclinic_pkg"
+			name   = "kalman"
+			output = "screen"
+			type   = "kalman.py"
+			>
+			<param
+				name = "x"
+				value = "11.105"
+			/>
+			<param
+				name = "y"
+				value = "-1"
+			/>
+			<param
+				name = "phi"
+				value = "0.0"
+			/>
+		</node>
+
+		<!-- LAUNCH A "Move to waypoint" NODE -->
+		<node
+			pkg    = "asclinic_pkg"
+			name   = "move_to_waypoint"
+			output = "screen"
+			type   = "move_to_waypoint.py"
+		/>
+
+	</group>
+
+</launch>

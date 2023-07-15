@@ -1,0 +1,16 @@
+<launch>
+
+	<!-- START A GROUP WITH A NAMESPACE -->
+	<group ns="asc">
+
+		<!-- LAUNCH A "Camera Capture" NODE -->
+		<node
+			pkg    = "asclinic_pkg"
+			name   = "webcam_node"
+			output = "screen"
+			type   = "webcam_node.py"
+		/>
+
+	</group>
+
+</launch>
